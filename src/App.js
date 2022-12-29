@@ -5,21 +5,14 @@ import { v4 as uuid } from 'uuid'
 import AutoDismissAlert from './components/AutoDismissAlert/AutoDismissAlert'
 import Header from './components/Header/Header'
 import IndexArticles from './routes/IndexArticles.js'
-import NewArticle from './routes/NewArticle.js'
 
 class App extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      user: null,
       msgAlerts: []
     }
   }
-
-  setUser = user => this.setState({ user })
-
-  clearUser = () => this.setState({ user: null })
-
   deleteAlert = (id) => {
     this.setState((state) => {
       return { msgAlerts: state.msgAlerts.filter(msg => msg.id !== id) }
@@ -34,11 +27,11 @@ class App extends Component {
   }
 
   render () {
-    const { msgAlerts, user } = this.state
+    const { msgAlerts } = this.state
 
     return (
       <Fragment>
-        <Header user={user} />
+        <Header/>
         {msgAlerts.map(msgAlert => (
           <AutoDismissAlert
             key={msgAlert.id}
@@ -52,9 +45,6 @@ class App extends Component {
         <main className="container">
           <Route exact path='/' render={() => (
             <IndexArticles msgAlert={this.msgAlert} />
-          )} />
-          <Route exact path='/new-article' render={() => (
-            <NewArticle msgAlert={this.msgAlert} />
           )} />
         </main>
       </Fragment>
