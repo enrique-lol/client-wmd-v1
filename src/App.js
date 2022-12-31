@@ -5,6 +5,7 @@ import { v4 as uuid } from 'uuid'
 import AutoDismissAlert from './components/AutoDismissAlert/AutoDismissAlert'
 import Header from './components/Header/Header'
 import IndexArticles from './routes/IndexArticles.js'
+import ViewArticle from './routes/ViewArticle.js'
 
 class App extends Component {
   constructor (props) {
@@ -45,6 +46,9 @@ class App extends Component {
         <main className="container">
           <Route exact path='/' render={() => (
             <IndexArticles msgAlert={this.msgAlert} />
+          )} />
+          <Route exact path='/article/:id' render={() => (
+            <ViewArticle msgAlert={this.msgAlert} />
           )} />
         </main>
       </Fragment>
