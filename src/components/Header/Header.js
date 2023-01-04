@@ -1,6 +1,7 @@
 import React from 'react'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
+import logo from './../../waiv-logo.png'
 
 // const alwaysOptions = (
 //   <Fragment>
@@ -9,11 +10,10 @@ import Navbar from 'react-bootstrap/Navbar'
 // )
 
 const Header = ({ user }) => (
-  <Navbar bg="primary" variant="dark" expand="md">
+  <Navbar bg="#f00000" variant="dark" expand="md">
     <Navbar.Brand href="#">
-      waiv
+      <img className='logo-image'src={logo} />
     </Navbar.Brand>
-    <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="ml-auto">
       </Nav>

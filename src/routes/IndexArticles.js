@@ -39,6 +39,7 @@ class IndexArticles extends Component {
     const indexJSX = articleArray.map(article => (
       <Link to={`/article/${article._id}`} key={article._id}>
         <article>
+          <img clasName='home-image' src={article.thumbnailUrl}/>
           <h3>{article.title}</h3>
         </article>
       </Link>
@@ -46,7 +47,7 @@ class IndexArticles extends Component {
 
     return (
       <Fragment>
-        <div className='content'>
+        <div className='index-content'>
           {indexJSX}
         </div>
       </Fragment>
