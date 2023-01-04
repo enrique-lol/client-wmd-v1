@@ -10,7 +10,7 @@ import logo from './../../waiv-logo.png'
 // )
 
 const Header = ({ user }) => (
-  <Navbar bg="#f00000" variant="dark" expand="md">
+  <Navbar bg="#3d3b36" variant="dark" expand="md">
     <Navbar.Brand href="#">
       <img className='logo-image'src={logo} />
     </Navbar.Brand>
